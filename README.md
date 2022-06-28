@@ -1,7 +1,5 @@
 # Awesome-book
 
-# Awesome-book
-
 Awesome book
 In this project I made a website that stores books in a collection and dynamcally displays them at the top of the page.
 
@@ -13,7 +11,7 @@ Getting Started
 To obtain a local copy of the project follow this steps:
 
 Open your console.
-Type the following "git clone https://github.com/ijeomaodinko/awesome-books.git" if you are using HTTPS or "git clone git@github.com:ijeomaodinko/awesome-books.git" if you are using a SSH key.
+Type the following "git clone https://github.com/ijeomaodinko/Awesome-book.git" if you are using HTTPS or "git clone git@github.com:ijeomaodinko/Awesome-book.git" if you are using a SSH key.
 Press ENTER to create your local clone.
 After creating it, you can open the "index.html" file in your browser.
 
