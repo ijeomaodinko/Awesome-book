@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -19,15 +20,15 @@ class BookCollection {
   }
 }
 
-const books = document.querySelector('.book-collection');
-const add = document.querySelector('.button');
-const inputtitle = document.querySelector('.input-title');
-const inputauthor = document.querySelector('.input-author');
+const books = document.querySelector(".book-collection");
+const add = document.querySelector(".button");
+const inputtitle = document.querySelector(".input-title");
+const inputauthor = document.querySelector(".input-author");
 
 const collection = new BookCollection();
 
-if (localStorage.getItem('data') !== null) {
-  collection.booklist = JSON.parse(localStorage.getItem('data'));
+if (localStorage.getItem("data") !== null) {
+  collection.booklist = JSON.parse(localStorage.getItem("data"));
 }
 
 function remove(event) {
@@ -36,26 +37,26 @@ function remove(event) {
 }
 
 function refreshPage() {
-  books.innerHTML = '';
+  books.innerHTML = "";
   for (let i = 0; i < collection.booklist.length; i += 1) {
-    const container = document.createElement('div');
-    container.className = 'container';
+    const container = document.createElement("div");
+    container.className = "container";
     books.appendChild(container);
 
-    const titledisplay = document.createElement('p');
+    const titledisplay = document.createElement("p");
     titledisplay.innerHTML = `"${collection.booklist[i].title}" by ${collection.booklist[i].author}`;
     container.appendChild(titledisplay);
 
-    const buttonremove = document.createElement('button');
-    buttonremove.innerHTML = 'Remove';
+    const buttonremove = document.createElement("button");
+    buttonremove.innerHTML = "Remove";
     buttonremove.classList = collection.booklist[i].title;
-    buttonremove.addEventListener('click', remove);
+    buttonremove.addEventListener("click", remove);
     container.appendChild(buttonremove);
   }
 
-  inputtitle.value = '';
-  inputauthor.value = '';
-  localStorage.setItem('data', JSON.stringify(collection.booklist));
+  inputtitle.value = "";
+  inputauthor.value = "";
+  localStorage.setItem("data", JSON.stringify(collection.booklist));
 }
 
 function addtocollection() {
@@ -64,6 +65,6 @@ function addtocollection() {
   refreshPage();
 }
 
-add.addEventListener('click', addtocollection);
+add.addEventListener("click", addtocollection);
 
 refreshPage();
