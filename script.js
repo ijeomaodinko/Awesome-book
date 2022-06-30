@@ -15,6 +15,9 @@ class BookCollection {
     this.booklist.push(book);
   }
 
+  removeea(book) {
+    this.booklist.pop(book);
+  }
   removeBook(booktitle) {
     this.booklist = this.booklist.filter((book) => book.title !== booktitle);
   }
@@ -31,23 +34,17 @@ if (localStorage.getItem("data") !== null) {
   collection.booklist = JSON.parse(localStorage.getItem("data"));
 }
 
-// to remove book from collection
-function removeElement(event) {
-  collection.removeBook(event.target.className);
+function removeall(book) {
+  const removea = document.querySelector(".container");
+  removea.textContent = "";
 
-  // to remove book from the collection
-  const containertoremove = document.querySelector(
-    `.${event.target.className}`
-  );
-  containertoremove.remove();
-
-  // to store new collection in Local Storage
   localStorage.setItem("data", JSON.stringify(collection.booklist));
 }
 
 // to create container to place added books and remove button
 function createBookElement(bookname, bookauthor) {
   const container = document.createElement("div");
+  container.className = "container";
   container.className = `container ${bookname}`;
   books.appendChild(container);
 
@@ -59,8 +56,9 @@ function createBookElement(bookname, bookauthor) {
   // to create remove button element
   const buttonremove = document.createElement("button");
   buttonremove.innerHTML = "Remove";
-  buttonremove.classList = bookname;
-  buttonremove.addEventListener("click", removeElement);
+  buttonremove.className = "button";
+  buttonremove.addEventListener("click", removeall);
+  // buttonremove.classList = bookname;
   container.appendChild(buttonremove);
 }
 
