@@ -20,15 +20,15 @@ class BookCollection {
   }
 }
 
-const books = document.querySelector('.book-collection');
-const addButton = document.querySelector('.add');
-const inputtitle = document.querySelector('.input-title');
-const inputauthor = document.querySelector('.input-author');
+const books = document.querySelector(".book-collection");
+const addButton = document.querySelector(".add");
+const inputtitle = document.querySelector(".input-title");
+const inputauthor = document.querySelector(".input-author");
 const collection = new BookCollection();
 
 // to set collection to same if there is collection stored
-if (localStorage.getItem('data') !== null) {
-  collection.booklist = JSON.parse(localStorage.getItem('data'));
+if (localStorage.getItem("data") !== null) {
+  collection.booklist = JSON.parse(localStorage.getItem("data"));
 }
 
 // to remove book from collection
@@ -37,30 +37,30 @@ function removeElement(event) {
 
   // to remove book from the collection
   const containertoremove = document.querySelector(
-    `.${event.target.className}`,
+    `.${event.target.className}`
   );
   containertoremove.remove();
 
   // to store new collection in Local Storage
-  localStorage.setItem('data', JSON.stringify(collection.booklist));
+  localStorage.setItem("data", JSON.stringify(collection.booklist));
 }
 
 // to create container to place added books and remove button
 function createBookElement(bookname, bookauthor) {
-  const container = document.createElement('div');
+  const container = document.createElement("div");
   container.className = `container ${bookname}`;
   books.appendChild(container);
 
   // to create book title element
-  const titledisplay = document.createElement('p');
+  const titledisplay = document.createElement("p");
   titledisplay.innerHTML = `"${bookname}" by ${bookauthor}`;
   container.appendChild(titledisplay);
 
   // to create remove button element
-  const buttonremove = document.createElement('button');
-  buttonremove.innerHTML = 'Remove';
+  const buttonremove = document.createElement("button");
+  buttonremove.innerHTML = "Remove";
   buttonremove.classList = bookname;
-  buttonremove.addEventListener('click', removeElement);
+  buttonremove.addEventListener("click", removeElement);
   container.appendChild(buttonremove);
 }
 
@@ -71,59 +71,59 @@ function addtocollection() {
   createBookElement(booktoadd.title, booktoadd.author);
 
   // to reset form input values
-  inputtitle.value = '';
-  inputauthor.value = '';
+  inputtitle.value = "";
+  inputauthor.value = "";
 
   // to store new collection in Local Storage
-  localStorage.setItem('data', JSON.stringify(collection.booklist));
+  localStorage.setItem("data", JSON.stringify(collection.booklist));
 }
 
 function updatePage() {
   for (let i = 0; i < collection.booklist.length; i += 1) {
     createBookElement(
       collection.booklist[i].title,
-      collection.booklist[i].author,
+      collection.booklist[i].author
     );
   }
 }
 
-addButton.addEventListener('click', addtocollection);
+addButton.addEventListener("click", addtocollection);
 updatePage();
 
 // to display the current date on the website
-const date = document.querySelector('.date');
+const date = document.querySelector(".date");
 const datedisplay = new Date();
 date.innerHTML = datedisplay;
 
 // to attach the class to a variable names that will help in diplaying of website
-const list = document.querySelector('.list');
-const addNew = document.querySelector('.addnew');
-const contact = document.querySelector('.contact');
+const list = document.querySelector(".list");
+const addNew = document.querySelector(".addnew");
+const contact = document.querySelector(".contact");
 
-const sectionList = document.querySelector('.booklist');
-const sectionForm = document.querySelector('.form');
-const sectionContact = document.querySelector('.contact-information');
+const sectionList = document.querySelector(".booklist");
+const sectionForm = document.querySelector(".form");
+const sectionContact = document.querySelector(".contact-information");
 
 // to declare the functions that will used in displaying websites
 function displaylist() {
-  sectionList.classList.remove('hidden');
-  sectionForm.classList.add('hidden');
-  sectionContact.classList.add('hidden');
+  sectionList.classList.remove("hidden");
+  sectionForm.classList.add("hidden");
+  sectionContact.classList.add("hidden");
 }
 
 function displayaddnew() {
-  sectionList.classList.add('hidden');
-  sectionForm.classList.remove('hidden');
-  sectionContact.classList.add('hidden');
+  sectionList.classList.add("hidden");
+  sectionForm.classList.remove("hidden");
+  sectionContact.classList.add("hidden");
 }
 
 function displaycontact() {
-  sectionList.classList.add('hidden');
-  sectionForm.classList.add('hidden');
-  sectionContact.classList.remove('hidden');
+  sectionList.classList.add("hidden");
+  sectionForm.classList.add("hidden");
+  sectionContact.classList.remove("hidden");
 }
 
 // to display each of the websites
-list.onclick = displaylist;
-addNew.onclick = displayaddnew;
-contact.onclick = displaycontact;
+list.addEventListener("click", displaylist);
+addNew.addEventListener("click", displayaddnew);
+contact.addEventListener("click", displaycontact);
