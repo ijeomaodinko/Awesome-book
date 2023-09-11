@@ -8,12 +8,27 @@
   list-style: none;
 }
 
+body {
+  background-color: #F5F5F5; 
+}
+
 .vertical-line {
   display: inline-block;
   border-left: 1px solid #ccc;
   margin: 0 10px;
   height: 1rem;
   padding-left: 1rem;
+  padding-bottom: 1rem;
+  color: #ffffff;
+}
+
+.vertical-line:hover {
+  border-bottom: 4px solid rgb(188, 209, 231); /* Primary Color - Deep Blue */
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #ffffff; /* Primary Color - Deep Blue */
 }
 
 nav {
@@ -21,6 +36,7 @@ nav {
   padding: 1rem;
   margin: 0.5rem;
   border: 2px solid black;
+  background-color: #003366; /* Primary Color - Deep Blue */
 }
 
 .icons {
@@ -35,6 +51,7 @@ h1 {
   width: fit-content;
   margin: 1rem auto;
   text-align: center;
+  color: #003366;
 }
 
 p {
@@ -46,12 +63,13 @@ p {
   display: flex;
   flex-direction: column;
   width: 500px;
+  min-height: 4rem;
   margin: auto;
-  border: 2px solid black;
+  background-color: rgb(203, 205, 206);
 }
 
 .book-collection div:nth-child(odd) {
-  background-color: rgb(196, 196, 196);
+  background-color: rgb(223, 234, 246); 
 }
 
 .container {
@@ -61,9 +79,17 @@ p {
 }
 
 button {
-  height: 20px;
+  height: 29px;
+  width: auto;
   margin-right: 0.5rem;
   padding: 3px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #FFD700;
+  border: none;
+  font-size: 12.9px;
+  font-weight: 500;
+  color: #003366;
 }
 
 .form {
@@ -86,6 +112,7 @@ button {
 
 h2 {
   font-size: 2rem;
+  color: #003366; /* Primary Color - Deep Blue */
 }
 
 input {
@@ -103,7 +130,11 @@ footer {
   align-items: center;
   padding: 1rem;
   margin: 0.5rem;
-  border: 2px solid black;
+  background-color: #003366;
+}
+
+footer p {
+  color: #ffffff
 }
 
 .contact-information {
@@ -130,7 +161,7 @@ footer {
 
 section {
   position: absolute;
-  top: 50%;
+  top: 29%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -144,4 +175,5 @@ section {
   float: right;
   font-size: 0.8rem;
   font-weight: 600;
+  color: #800020; /* Secondary Color - Rich Burgundy */
 }
