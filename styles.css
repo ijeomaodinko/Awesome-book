@@ -175,5 +175,63 @@ section {
   float: right;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #800020; /* Secondary Color - Rich Burgundy */
+  color: #800020; 
+}
+
+@media (max-width: 600px) {
+
+  body {
+    background-color: #EFEFEF; 
+  }
+
+  nav {
+    flex-direction: column; 
+    text-align: center; 
+  }
+
+  .icons {
+    position: relative; 
+    padding: 1rem 0; 
+  }
+
+  .book-collection {
+    width: 100%; 
+  }
+
+  .book-collection div:nth-child(odd) {
+    background-color: rgb(223, 234, 246); 
+  }
+
+  .container {
+    flex-direction: column; 
+  }
+
+  button {
+    width: 100%; 
+    margin-right: 0; 
+    margin-top: 0.5rem; 
+  }
+
+  .form {
+    width: 100%; 
+  }
+
+  .add {
+    align-self: center; 
+    margin-top: 0.5rem; 
+  }
+
+  section {
+    top: 50%; 
+  }
+
+  .date {
+    float: none; 
+    text-align: center;
+  }
+
+  footer {
+    flex-direction: column; 
+    text-align: center; 
+  }
 }
